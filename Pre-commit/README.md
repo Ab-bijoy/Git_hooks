@@ -170,6 +170,84 @@ example.py:5:1: F401 'os' imported but unused
 
 ---
 
+## 📸 Step-by-Step Example with Screenshots
+
+Here's a real-world example demonstrating how pre-commit hooks work in practice:
+
+### Step 1: The Code Before Formatting
+
+Suppose you have a Python file (`app.py`) with functions that don't follow proper formatting standards - all on single lines:
+
+![Before Formatting - Code is not properly formatted with functions on single lines](step1_before_format.png)
+
+```python
+def sum(a: int, b: int) -> int: return a + b
+
+def subtract(a: int, b: int) -> int: return a - b
+
+def multiply(a: int, b: int) -> int: return a * b
+
+def divide(a: int, b: int) -> int: return a / b
+```
+
+### Step 2: View in Your Editor
+
+This is how the code looks in VS Code before committing:
+
+![Code in VS Code editor before commit](step2_code_in_editor.png)
+
+### Step 3: Attempt to Commit
+
+When you try to commit this code, the pre-commit hooks automatically run:
+
+```bash
+git commit -m "happy coding"
+```
+
+![Pre-commit hooks running - Black fails and reformats, others pass](step3_commit_output.png)
+
+**What Happened?**
+| Hook | Status | Explanation |
+|------|--------|-------------|
+| **black** | ⚠️ Failed | Black found formatting issues and **automatically reformatted** `test\app.py` |
+| **isort** | ✅ Passed | Imports were already properly organized |
+| **flake8** | ✅ Passed | No linting errors found |
+| **bandit** | ✅ Passed | No security vulnerabilities detected |
+
+### Step 4: The Code After Black Reformats
+
+After Black runs, your code is automatically reformatted to follow PEP 8:
+
+```python
+def sum(a: int, b: int) -> int:
+    return a + b
+
+
+def subtract(a: int, b: int) -> int:
+    return a - b
+
+
+def multiply(a: int, b: int) -> int:
+    return a * b
+
+
+def divide(a: int, b: int) -> int:
+    return a / b
+```
+
+### Step 5: Commit Again
+
+Since Black modified your files, simply stage the changes and commit again:
+
+```bash
+git add .
+git commit -m "happy coding"
+```
+
+This time, all hooks will pass and your commit will succeed! ✅
+
+---
+
 ## 🎯 Command Cheat Sheet
 
 | Command | Purpose |
@@ -212,4 +290,4 @@ my-project/
 
 > 💡 **Pro Tip:** Run `pre-commit run --all-files` after initial setup to fix existing code!
 
-Happy coding! 🚀
+Happy coding! 
