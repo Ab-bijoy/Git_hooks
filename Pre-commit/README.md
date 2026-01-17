@@ -201,6 +201,13 @@ This is how the code looks in VS Code before committing:
 When you try to commit this code, the pre-commit hooks automatically run:
 
 ```bash
+git status
+
+```
+```bash
+git add .
+```
+```bash
 git commit -m "happy coding"
 ```
 
