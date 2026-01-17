@@ -291,4 +291,4 @@ echo "npx lint-staged" > .husky/pre-commit
 
 > 💡 **Pro Tip:** Start with a simple `pre-commit` hook that runs your linter. Once you see the benefits, gradually add more hooks!
 
-Happy coding! 🚀
+Happy coding! 
