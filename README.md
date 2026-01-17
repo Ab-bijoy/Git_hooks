@@ -26,8 +26,7 @@ Git Hooks are **scripts that run automatically** at specific points in the Git w
 Git_hooks/
 ├── 📄 README.md                    ← You are here!
 ├── 📄 .pre-commit-config.yaml      ← Hook configuration
-├── 📄 .gitignore                   ← Exclude sensitive files
-├── 📄 .env                         ← Environment variables (gitignored)
+
 │
 ├── 📂 Pre-commit/                  ← Client-side: runs on every commit
 │   └── README.md                   ← Guide to pre-commit hooks
@@ -51,15 +50,15 @@ Git_hooks/
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           YOUR LAPTOP                                       │
 │                                                                             │
-│   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
-│   │   COMMIT    │         │    PUSH     │         │   SERVER    │          │
-│   │             │  ────►  │             │  ────►  │  RECEIVES   │          │
-│   │ pre-commit  │         │  pre-push   │         │ pre-receive │          │
-│   │  runs here  │         │  runs here  │         │  runs here  │          │
-│   └─────────────┘         └─────────────┘         └─────────────┘          │
+│   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐           │
+│   │   COMMIT    │         │    PUSH     │         │   SERVER    │           │
+│   │             │  ────►  │             │  ────►  │  RECEIVES   │           │
+│   │ pre-commit  │         │  pre-push   │         │ pre-receive │           │
+│   │  runs here  │         │  runs here  │         │  runs here  │           │
+│   └─────────────┘         └─────────────┘         └─────────────┘           │
 │                                                          │                  │
-│   📝 Formats code         🔐 Scans for secrets    🚫 Blocks bad code       │
-│   📚 Sorts imports        🧪 Runs full tests      🚀 Deploys if OK         │
+│   📝 Formats code         🔐 Scans for secrets    🚫 Blocks bad code      │
+│   📚 Sorts imports        🧪 Runs full tests      🚀 Deploys if OK        │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
