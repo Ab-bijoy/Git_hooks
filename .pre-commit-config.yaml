@@ -19,3 +19,9 @@ repos:
     hooks:
       - id: bandit
         args: ["-iii", "-ll"]  # Skip low severity issues
+  - repo: https://github.com/gitguardian/ggshield
+    rev: v1.46.0
+    hooks:
+      - id: ggshield-push
+        language_version: python3
+        stages: [pre-push]
